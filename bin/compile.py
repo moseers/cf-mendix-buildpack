@@ -233,8 +233,7 @@ def run_mx_build():
         "--config",
         os.path.join(mono_location, "etc/mono/config"),
         os.path.join(mxbuild_location, "modeler/mxbuild.exe"),
-        "--target=package",
-        "--output=/tmp/model.mda",
+        "--target=deploy",
         "--java-home=%s" % jvm_location,
         "--java-exe-path=%s" % os.path.join(jvm_location, "bin/java"),
     ]
