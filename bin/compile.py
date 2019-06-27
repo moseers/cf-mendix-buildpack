@@ -9,7 +9,6 @@ import sys
 
 import requests
 import zipfile
-
 import datadog
 import database_config
 import telegraf
@@ -265,11 +264,11 @@ def run_mx_build():
             else:
                 os.unlink(path)
 
-    zf = zipfile.ZipFile("/tmp/model.mda")
-    try:
-        zf.extractall(BUILD_DIR)
-    finally:
-        zf.close()
+    # zf = zipfile.ZipFile("/tmp/model.mda")
+    # try:
+    #     zf.extractall(BUILD_DIR)
+    # finally:
+    #     zf.close()
 
     try:
         with open(os.path.join(BUILD_DIR, ".sourcepush"), "w") as f:
