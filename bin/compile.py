@@ -260,9 +260,9 @@ def run_mx_build():
         path = os.path.join(BUILD_DIR, file_name)
         if file_name != ".local":
             if os.path.isdir(path):
-                shutil.rmtree(path)
+                #shutil.rmtree(path)
             else:
-                os.unlink(path)
+                #os.unlink(path)
 
     # zf = zipfile.ZipFile("/tmp/model.mda")
     # try:
@@ -322,9 +322,9 @@ if __name__ == "__main__":
     if is_source_push():
         logging.info("source push detected")
         run_mx_build()
-        for folder in ("mxbuild", "mono"):
-            path = os.path.join(DOT_LOCAL_LOCATION, folder)
-            shutil.rmtree(path, ignore_errors=True)
+        # # for folder in ("mxbuild", "mono"):
+        # #     path = os.path.join(DOT_LOCAL_LOCATION, folder)
+        #     shutil.rmtree(path, ignore_errors=True)
     set_up_directory_structure()
     set_up_java()
     set_up_appdynamics()
