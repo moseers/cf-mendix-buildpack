@@ -249,20 +249,20 @@ def run_mx_build():
 
     args.append(get_mpr_file())
 
-    try:
-        logging.debug("subprocess call {args}".format(args=args))
-        subprocess.check_call(args, env=mono_env)
-    except subprocess.CalledProcessError as e:
-        buildstatus_callback(BUILD_ERRORS_JSON)
-        raise e
+    # try:
+    #     logging.debug("subprocess call {args}".format(args=args))
+    #     subprocess.check_call(args, env=mono_env)
+    # except subprocess.CalledProcessError as e:
+    #     buildstatus_callback(BUILD_ERRORS_JSON)
+    #     raise e
 
-    for file_name in os.listdir(BUILD_DIR):
-        path = os.path.join(BUILD_DIR, file_name)
-        if file_name != ".local":
-            if os.path.isdir(path):
-                #shutil.rmtree(path)
-            else:
-                #os.unlink(path)
+    # for file_name in os.listdir(BUILD_DIR):
+    #     path = os.path.join(BUILD_DIR, file_name)
+    #     if file_name != ".local":
+    #         if os.path.isdir(path):
+    #             shutil.rmtree(path)
+    #         else:
+    #             os.unlink(path)
 
     # zf = zipfile.ZipFile("/tmp/model.mda")
     # try:
